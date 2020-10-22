@@ -1,0 +1,38 @@
+_model: contact
+---
+title: Contact
+---
+body: Should you wish to make any enquiries regarding our features, we welcome you to email us using the form below. Low res images and copy are available upon request.
+---
+contactForm:
+
+<form method="POST" action="https://formspree.io/xbjzkzvp">
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <input class="input" type="text" name="name" id="full-name" placeholder="First and last" required>
+        </div>
+    </div>    
+   <div class="field">
+        <label class="label">Email address</label>
+        <div class="control">
+            <input class="input" type="email" name="email"  id="email" placeholder="Your email"  required>
+        </div>
+    </div>    
+    <div class="field">
+        <label class="label">Message</label>
+        <div class="control">                
+            <textarea class="textarea" name="message" id="message" placeholder="Your message"  required></textarea>
+        </div>
+    </div>  
+    
+    <div class="field">
+        <div class="control">
+            <button class="button is-link" type="submit">Send</button>
+        </div>
+    </div>  
+</form>
+---
+phone:
+
+ Natalie Boruvka +27 72 606 9392

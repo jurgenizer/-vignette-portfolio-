@@ -1,0 +1,22 @@
+_model: about
+---
+title: About Us
+---
+blurb: Interiors  Architecture  Product  Food
+---
+body:
+
+Vignette is a photographic content agency specialising in decor and lifestyle editorials.   
+In addition, we create bespoke imagery to elevate brands.  
+---
+hero: <img src="/static/images/background.jpg" alt="One of our beautiful interior photographs.">
+---
+personOne:
+
+Karl Rogers  
+[karlrogers.co.za](https://karlrogers.co.za/)
+---
+personTwo:
+
+Natalie Boruvka  
+[natalieboruvka.com](https://natalieboruvka.com/)

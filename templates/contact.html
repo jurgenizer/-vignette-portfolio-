@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+<h1 class="title has-text-primary">{{ this.title }}</h1> 
+<div class="container">
+  {{ this.body }}
+   <div class="content has-text-link">
+    {{ this.phone }}
+  </div>
+  <div class="content">
+    {{ this.contactForm }}
+  </div>
+</div>
+{% endblock %}

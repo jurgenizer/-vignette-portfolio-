@@ -1,0 +1,8 @@
+[project]
+name = vignette-portfolio
+url = https://vignette.agency/
+locale = en_ZA
+url_style = absolute
+
+[packages]
+lektor-thumbnail-generator = 0.5.0
