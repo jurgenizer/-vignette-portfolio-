@@ -9,3 +9,5 @@ pub_date: 2020-10-08
 summary: After living in the UK, artist Kim
 ---
 cover_image: 1-black.jpg
+---
+_template: feature-post-masonry.html

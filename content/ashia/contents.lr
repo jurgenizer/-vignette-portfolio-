@@ -9,3 +9,5 @@ summary:
 Ashia is a world-class cheetah 
 ---
 cover_image: 1-ashia.jpg
+---
+_template: feature-post-masonry.html
