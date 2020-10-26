@@ -20,7 +20,6 @@
     background: #fff;
     margin: 0 0 1.5em;
     width: 100%;
-    -webkit-transition: 1s ease all;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -45,7 +44,7 @@ tiny {
     padding-left: 30px;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 768px) {
     .masonry {
         -moz-column-count: 1;
         -webkit-column-count: 1;
@@ -53,14 +52,14 @@ tiny {
     }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 768px){
+@media only screen and (min-width: 769px) and (max-width: 1023px){
     .masonry {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
     }
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1024px) {
     .masonry {
         -moz-column-count: 3;
         -webkit-column-count: 3;
