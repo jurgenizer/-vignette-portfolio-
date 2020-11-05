@@ -1,6 +1,6 @@
 title: Ashia
 ---
-body: Ashia is a world-class cheetah sanctuary situated on a picturesque site at the foot of the Drakenstein Mountains in South Africa's Western Cape.
+body: [Ashia](https://www.ashia.co.za/) is a world-class cheetah sanctuary situated on a picturesque site at the foot of the Drakenstein Mountains in South Africa's Western Cape.
 ---
 pub_date: 2020-10-01
 ---
@@ -8,6 +8,6 @@ summary:
 
 Ashia is a world-class cheetah 
 ---
-cover_image: 1-ashia.jpg
+cover_image: ashia001.jpg
 ---
 _template: feature-post-masonry.html
