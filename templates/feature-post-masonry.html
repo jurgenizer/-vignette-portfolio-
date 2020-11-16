@@ -7,6 +7,14 @@
     <div class="content">
     <div class="box">
     {{ this.body }}
+
+    {% set documents = this.attachments.documents.all() %}
+    {% if documents %}
+            {% for document in documents %}
+                <a href = "{{document._id}}" class="button is-link is-small is-fullwidth"> {{ document._id }}</a>
+            {% endfor %}
+    {% endif %}
+
     {% set images = this.attachments.images.all() %}
     {% if images %}
         <div class="masonry">
