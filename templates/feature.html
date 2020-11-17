@@ -8,9 +8,7 @@
 
         {% for feature in this.children.filter(F._model == 'feature-post') %}
         <div class="column is-one-third">
-        <div class="box pt-2">
-
-            <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
+              <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
 
             {% set image = feature.attachments.images.first() %}
 
@@ -21,12 +19,9 @@
             {% endif %}
                         <p>{{ feature.summary }}
             <a class="more" href="{{ feature|url }}">Read more ...</a></p>
-
-        </div>
         </div>
         {% endfor %}
 
         </div>
     </div>
-
 {% endblock %}
