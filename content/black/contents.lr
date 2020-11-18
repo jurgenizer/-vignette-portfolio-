@@ -10,4 +10,4 @@ summary: After living in the UK, artist Kim
 ---
 cover_image: black001.jpg
 ---
-_template: feature-post-masonry.html
+_template: feature-post-three-columns.html
