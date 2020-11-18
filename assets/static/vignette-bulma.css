@@ -1,6 +1,12 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
 /*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
+
+/* Added by Jurgen */
+.post-img {
+  border-radius: 5px 5px 5px 5px;
+}
+
 /* Bulma Utilities */
 @keyframes spinAround {
   from {

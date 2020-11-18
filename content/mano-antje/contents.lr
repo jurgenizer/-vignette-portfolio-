@@ -10,4 +10,4 @@ summary: The calm repose of this architect’s house
 ---
 cover_image: mano-antje001.jpg
 ---
-_template: feature-post-three-columns.html
+_template: feature-post-masonry.html

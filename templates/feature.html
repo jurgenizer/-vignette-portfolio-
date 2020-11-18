@@ -14,10 +14,10 @@
 
             {% if image %}  
 
-                 <a href="{{ feature|url }}"><img class="post-img pt-2" src="{{ image.thumbnail(498, 749, mode="crop", quality=78)|url }}" alt="Thumbnail image for {{ feature.title }}"></a>
+                 <a href="{{ feature|url }}"><img class="post-img" src="{{ image.thumbnail(498, 749, mode="crop", quality=78)|url }}" alt="Thumbnail image for {{ feature.title }}"></a>
 
             {% endif %}
-                        <p>{{ feature.summary }}
+                        <p class ="mt-2">{{ feature.summary }}
             <a class="more" href="{{ feature|url }}">Read more ...</a></p>
         </div>
         {% endfor %}

@@ -12,6 +12,6 @@ summary: This 1860 Victorian Villa underwent extensive alterations
 ---
 cover_image: rupperti-yazdi001.jpg
 ---
-_template: feature-post-three-columns.html
+_template: feature-post-masonry.html
 ---
 download: 

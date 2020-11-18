@@ -10,4 +10,4 @@ summary: Inside this charming Cape farmhouse
 ---
 cover_image: tandana001.jpg
 ---
-_template: feature-post-three-columns.html
+_template: feature-post-masonry.html

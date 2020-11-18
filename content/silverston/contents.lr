@@ -8,4 +8,4 @@ summary: As quaint and charming as the seaside village
 ---
 cover_image: silverston001.jpg
 ---
-_template: feature-post-three-columns.html
+_template: feature-post-masonry.html
