@@ -26,18 +26,6 @@
     position: relative;
   }
   
-  
-  .masonry-preloader {
-    font-size: 2em;
-    letter-spacing: 2px;
-    text-transform: lowercase;
-    opacity: .5;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-   align-items: center;
-  }
-  
   @media only screen and (min-width: 1008px) {
     /* Vertical masonry bricks on desktop-sized screen */
     .masonry-brick {
@@ -72,4 +60,27 @@
     z-index: 5000;
     color: white;
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+/* Thank you w3schools.com for the preloader*/
+.jurgen-preloader {
+  margin: 0 auto;
+  z-index: 5;
+  border: 11px solid #ffffff; 
+  border-top: 11px solid #3498db; 
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
