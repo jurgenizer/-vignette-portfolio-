@@ -10,4 +10,4 @@ summary: When interior designer Nicky Tyers viewed this house for the first time
 ---
 cover_image: tyers001.jpg
 ---
-_template: feature-post-three-columns.html
+_template: feature-post-masonry.html
