@@ -4,6 +4,7 @@
 
 /* Added by Jurgen */
 .post-img {
+  display: block;
   border-radius: 5px 5px 5px 5px;
 }
 

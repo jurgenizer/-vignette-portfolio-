@@ -3,25 +3,27 @@
 {% block title %}Features{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">Features</h1>
-    <div class="container">
+<div class="container">
     <div class="columns is-multiline">
 
         {% for feature in this.children.filter(F._model == 'feature-post') %}
         <div class="column is-one-third">
-              <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
+            <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
 
             {% set image = feature.attachments.images.first() %}
 
-            {% if image %}  
+            {% if image %}
 
-                 <a href="{{ feature|url }}"><img class="post-img" src="{{ image.thumbnail(498, 749, mode="crop", quality=80)|url }}" alt="Thumbnail image for {{ feature.title }}"></a>
+            <a href="{{ feature|url }}"><img class="post-img"
+                    src="{{ image.thumbnail(498, 749, mode="crop", quality=80)|url }}"
+                    alt="Thumbnail image for {{ feature.title }}"></a>
 
             {% endif %}
-                        <p class ="mt-2">{{ feature.summary }}
-            <a class="more" href="{{ feature|url }}">Read more ...</a></p>
+            <p class="mt-2">{{ feature.summary }}
+                <a class="more" href="{{ feature|url }}">Read more ...</a></p>
         </div>
         {% endfor %}
 
-        </div>
     </div>
+</div>
 {% endblock %}

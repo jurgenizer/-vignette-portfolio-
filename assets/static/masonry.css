@@ -33,14 +33,14 @@
     }
   }
   
-  @media only screen and (min-width: 641px) and (max-width: 1007px) {
+  @media only screen and (min-width: 769px) and (max-width: 1007px) {
     /* Vertical masonry bricks on tablet-sized screen */
     .masonry-brick {
       width: 50%;
     }
   }
 
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 768px) {
     /* Vertical masonry bricks on phone-sized screen */
     .masonry-brick {
         width: 100%;
