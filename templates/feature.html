@@ -10,8 +10,7 @@
         <div class="column is-one-third">
             <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
 
-            {% set image = feature.attachments.images.first() %}
-
+            {% set image = feature.attachments.get(feature.cover_image) %}
             {% if image %}
 
             <a href="{{ feature|url }}"><img class="post-img"
