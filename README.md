@@ -1,6 +1,6 @@
 # vignette-portfolio
-A potfolio site for Vignette Content Agency.
-Vignette is a photographic content agency specialising in decor and lifestyle editorials.
+A portfolio site for Vignette Content Agency.
+Vignette is a South African photographic content agency specialising in decor and lifestyle editorials.
 
 Site created with [Lektor](https://www.getlektor.com/), [Bulma](https://bulma.io/).
 
