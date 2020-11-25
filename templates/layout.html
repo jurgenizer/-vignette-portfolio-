@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Vignette is a photographic and content agency specialising in decor and lifestyle editorials | We create bespoke imagery to elevate brands">
 
-<link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">
+<!--<link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">-->
+<!-- Load CSS Asynchronously thank you Filament Group-->
+<link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}" media="print" onload="this.media='all'">
+
 <link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
@@ -33,7 +36,7 @@
 <title>{% block title %}{% endblock %} | By Vignette | Bespoke Interior, Architecture, Product & Food Photography South Africa</title>
 
 <!-- fontawesome thank you fontawesome -->
-<script src="https://kit.fontawesome.com/24bdd6cff8.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/24bdd6cff8.js" crossorigin="anonymous" async></script>
 </head>
 
 <body>
