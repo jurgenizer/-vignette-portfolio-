@@ -9,7 +9,11 @@ body:
 Vignette is a photographic content agency specialising in decor and lifestyle editorials.   
 In addition, we create bespoke imagery to elevate brands.  
 ---
-hero: <img src="/static/images/background.jpg" class="post-img" alt="One of our beautiful interior photographs.">
+hero:
+
+<source srcset="/static/images/background.webp" type="image/webp" class="post-img" alt="One of our beautiful interior photographs.">
+<source srcset="/static/images/background.jpg" type="image/jpeg" class="post-img" alt="One of our beautiful interior photographs."> 
+<img src="/static/images/background.jpg" class="post-img" alt="One of our beautiful interior photographs.">
 ---
 personOne:
 
