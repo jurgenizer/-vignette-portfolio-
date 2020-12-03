@@ -21,9 +21,13 @@
     <div class="masonry">
       {% for image in images %}
       <div class="masonry-brick">
-       
-             <img src="https://ik.imagekit.io/v8vnouajc37/{{ theurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format" class="masonry-img">
-     
+        <picture class="masonry-img">
+          <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.webp" type="image/webp"
+            alt="High quality photograph of {{ this.title }} design in webp file format">
+          <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.jpg" type="image/jpeg"
+            alt="High quality photograph of {{ this.title }} design in webp file format">
+          <img src="{{ theurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format">
+        </picture>
         <p class="top-left">{{ image._id}}</p>
       </div>
       {% endfor %}
