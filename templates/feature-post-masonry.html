@@ -19,6 +19,8 @@
   {% endfor %}
   {% endif %}
 
+  {% set theurl = this|url|replace("/", "") %}
+  <p>{{ theurl}}</p>
   {% set images = this.attachments.images.all() %}
   {% if images %}
   <div class="wrapper">
@@ -28,10 +30,10 @@
       {% for image in images %}
       <div class="masonry-brick">
         
-        <img src="{{ image|url }}" alt="Image of {{ this.title }}" class="masonry-img">
-        <!-- <p class="top-left">{{ image._attachment_type }}</p> -->
+        <img src="{{ theurl}}{{'%03d'  % loop.index }}.jpg" alt="Image of {{ this.title }}" class="masonry-img">
+        <!-- <img src="{{ image|url }}" alt="Image of {{ this.title }}" class="masonry-img"> -->
+      <p class="top-left">{{ image._id}}</p> 
      
-        <p class="top-left">{{ '%03d'  % loop.index }}</p>
      
       </div>
       {% endfor %}
