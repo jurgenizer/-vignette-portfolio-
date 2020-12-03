@@ -8,10 +8,14 @@
 
   {{ this.body }}
 
+  <p>{{ this.title }}</p>
+  <p>{{ this|url }}</p>
+
   {% set documents = this.attachments.documents.all() %}
   {% if documents %}
   {% for document in documents %}
   <a href="{{document._id}}" class="button is-link" target="_blank"> Download {{ document._id }}</a>
+  <p>{{ document|url }}</p>
   {% endfor %}
   {% endif %}
 
@@ -19,10 +23,16 @@
   {% if images %}
   <div class="wrapper">
     <div class="masonry">
+      <p>{{ '%04d' % 42 }}
+      </p>
       {% for image in images %}
       <div class="masonry-brick">
+        
         <img src="{{ image|url }}" alt="Image of {{ this.title }}" class="masonry-img">
-        <p class="top-left">{{ image.record_label }}</p>
+        <!-- <p class="top-left">{{ image._attachment_type }}</p> -->
+     
+        <p class="top-left">{{ '%03d'  % loop.index }}</p>
+     
       </div>
       {% endfor %}
     </div>
