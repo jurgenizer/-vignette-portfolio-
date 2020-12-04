@@ -26,7 +26,7 @@
             alt="High quality photograph of {{ this.title }} design in webp file format">
           <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.jpg" type="image/jpeg"
             alt="High quality photograph of {{ this.title }} design in webp file format">
-          <img src="{{ theurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format">
+          <img src="{{ heurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format">
         </picture>
         <p class="top-left">{{ image._id}}</p>
       </div>
@@ -66,6 +66,7 @@
 
     for (i = 0; i < gcLength; ++i) {
       gHeight += gc[i].offsetHeight + parseInt(gridGutter);
+      //console.log('number of items is:', + gcLength);
     }
 
     if (window.screen.width >= 1024)
@@ -87,7 +88,7 @@
       imagesLoaded(document.querySelector('.masonry'), function () {
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
-        // A masonry grid with 8px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
+        // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
         masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
         console.log("Loaded");
       });
