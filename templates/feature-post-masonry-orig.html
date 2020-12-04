@@ -5,8 +5,9 @@
 <h1 class="title has-text-primary">{{ this.title }}</h1>
 
 <div class="container">
+
   {{ this.body }}
-  <!-- <p>{{ this|url }}</p>  -->
+
   {% set documents = this.attachments.documents.all() %}
   {% if documents %}
   {% for document in documents %}
@@ -14,26 +15,20 @@
   {% endfor %}
   {% endif %}
 
-  {% set theurl = this|url|replace("/", "") %}
   {% set images = this.attachments.images.all() %}
   {% if images %}
   <div class="wrapper">
     <div class="masonry">
       {% for image in images %}
       <div class="masonry-brick">
-        <picture class="masonry-img">
-          <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.webp" type="image/webp"
-            alt="High quality photograph of {{ this.title }} design in webp file format">
-          <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.jpg" type="image/jpeg"
-            alt="High quality photograph of {{ this.title }} design in webp file format">
-          <img src="{{ heurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format">
-        </picture>
-        <p class="top-left">{{ image._id}}</p>
+        <img src="{{ image|url }}" alt="Image of {{ this.title }}" class="masonry-img">
+        <p class="top-left">{{ image.record_label }}</p>
       </div>
       {% endfor %}
     </div>
   </div>
   {% endif %}
+
 </div>
 
 <section class="section">
@@ -66,7 +61,6 @@
 
     for (i = 0; i < gcLength; ++i) {
       gHeight += gc[i].offsetHeight + parseInt(gridGutter);
-      //console.log('number of items is:', + gcLength);
     }
 
     if (window.screen.width >= 1024)
@@ -88,7 +82,7 @@
       imagesLoaded(document.querySelector('.masonry'), function () {
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
-        // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
+        // A masonry grid with 8px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
         masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
         console.log("Loaded");
       });
