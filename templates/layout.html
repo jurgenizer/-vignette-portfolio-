@@ -1,24 +1,26 @@
 <!doctype html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Vignette is a photographic and content agency specialising in decor and lifestyle editorials | We create bespoke imagery to elevate brands">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Vignette is a photographic and content agency specialising in decor and lifestyle editorials | We create bespoke imagery to elevate brands">
 
-<link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">
+  <link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">
 
-<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-<link rel="manifest" href="/static/site.webmanifest">
-<link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#000000">
-<link rel="shortcut icon" href="/static/favicon.ico">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="msapplication-config" content="/static/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="manifest" href="/static/site.webmanifest">
+  <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="/static/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-<!-- Structured data info - Google Search -->
-<script type="application/ld+json">
+  <!-- Structured data info - Google Search -->
+  <script type="application/ld+json">
 [{
 "@context": "http://schema.org",
 "@type": "Organization",
@@ -28,102 +30,101 @@
 "sourceOrganization" : "https://vignette.agency"
 }]
 </script>
-
-<title>{% block title %}{% endblock %} | By Vignette | Bespoke Interior, Architecture, Product & Food Photography South Africa</title>
-<!-- fontawesome thank you fontawesome -->
-<script defer src="https://kit.fontawesome.com/24bdd6cff8.js" crossorigin="anonymous"></script>
+  <title>{% block title %}{% endblock %} | By Vignette | Bespoke Interior, Architecture, Product & Food Photography
+    South Africa</title>
 </head>
 
 <body>
-<nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
-<div class="container">
+  <nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
+    <div class="container">
 
-    <div class="navbar-brand pt-2">
-<p class="pl-4 is-mobile">
-    <a href="{{ '/'|url }}">
-        <img src="{{ '/static/vignette-logo-white-horizontal.svg'|url }}" width="242" height="42">
-        </a> 
-  </p>
+      <div class="navbar-brand pt-2">
+        <p class="pl-4 is-mobile">
+          <a href="{{ '/'|url }}">
+            <img src="{{ '/static/vignette-logo-white-horizontal.svg'|url }}" width="242" height="42">
+          </a>
+        </p>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
-    </div>
+      </div>
 
-    <div id="navbarMenu" class="navbar-menu">
-    <div class="navbar-end">
-    </a>
-      <a href="{{ '/'|url }}" class="navbar-item">
-         Features
-      </a>
-     <a href="{{ '/about'|url }}" class="navbar-item">
-         About
-      </a>
-      <a href="https://www.instagram.com/vignette.sa/" class="navbar-item">
-        <i class="fa fa-instagram"></i>&nbsp;Instagram
-      </a>
-      <a href="{{ '/contact'|url }}" class="navbar-item">
-        Contact
-      </a>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          </a>
+          <a href="{{ '/'|url }}" class="navbar-item">
+            Features
+          </a>
+          <a href="{{ '/about'|url }}" class="navbar-item">
+            About
+          </a>
+          <a href="https://www.instagram.com/vignette.sa/" class="navbar-item">
+            Instagram&nbsp;<img src="{{ '/static/instagram-white.svg'|url }}" width="14" height="14">
+          </a>
+          <a href="{{ '/contact'|url }}" class="navbar-item">
+            Contact
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
             <div class="navbar-dropdown">
-                <a href="{{ '/privacy-policy'|url }}" class="navbar-item">
-                    <!--<i class="fas fa-info-circle fa-fw"></i></i>&nbsp;-->
-                    Privacy Policy
-                </a>
-            <div>
+              <a href="{{ '/privacy-policy'|url }}" class="navbar-item">
+                Privacy Policy
+              </a>
+              <div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </nav>
+
+  <section class="section pt-5">
+    <div class="container">
+      <div class="content">
+        {% block body %}{% endblock %}
       </div>
     </div>
-    </div>
+  </section>
 
-</div>
-</nav>
+  <footer class="footer has-text-white content has-text-centered">
+    <!-- Thank you https://simpleicons.org/ -->
+    <a href="https://www.instagram.com/vignette.sa/" title="Vignette on Instagram">
+      <img src="{{ '/static/instagram-pink.svg'|url }}" width="48" height="48">
+    </a>
+    <p class="pt-1">&copy; 2020 Vignette: Natalie Boruvka & Karl Rogers</p>
+  </footer>
 
-<section class="section pt-5">
-    <div class="container">
-        <div class="content">
-        {% block body %}{% endblock %}
-        </div>
-    </div>
-</section>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
 
-<footer class="footer has-text-white content has-text-centered">
-<a href="https://www.instagram.com/vignette.sa/" title="Vignette on Instagram"> <i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a> 
-<p class="pt-1">&copy; 2020 Vignette: Natalie Boruvka & Karl Rogers</p>
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-</footer>
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
 
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
 
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
 
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
 
-    // Add a click event on each of them
-    $navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
+          });
+        });
+      }
 
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
     });
-  }
-
-});
-</script>
+  </script>
 
 </body>
