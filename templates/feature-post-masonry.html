@@ -24,8 +24,8 @@
         <picture class="masonry-img">
           <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.webp" type="image/webp"
             alt="High quality photograph of {{ this.title }} design in webp file format">
-          <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.jpg" type="image/jpeg"
-            alt="High quality photograph of {{ this.title }} design in webp file format">
+          <!-- <source srcset="{{ theurl}}{{'%03d'  % loop.index }}.jpg" type="image/jpeg"
+            alt="High quality photograph of {{ this.title }} design in webp file format"> -->
           <img src="{{ heurl}}{{'%03d'  % loop.index }}.jpg" alt="Photo of {{ this.title }} design in jpg file format">
         </picture>
         <p class="top-left">{{ image._id}}</p>
