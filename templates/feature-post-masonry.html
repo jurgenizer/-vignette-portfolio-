@@ -2,10 +2,13 @@
 {% block title %}{{ this.title }}{% endblock %}
 
 {% block body %}
+<link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
+<!-- Thank you to https://imagesloaded.desandro.com/-->
+<script src="https://unpkg.com/imagesloaded@^4/imagesloaded.pkgd.min.js"></script>
+
+
 <h1 class="title has-text-primary">{{ this.title }}</h1>
-
 <div class="container">
-
   {{ this.body }}
 
   {% set documents = this.attachments.documents.all() %}
@@ -48,9 +51,7 @@
   </div>
 </section>
 
-<link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
-<!-- Thank you to https://imagesloaded.desandro.com/-->
-<script src="https://unpkg.com/imagesloaded@^4/imagesloaded.pkgd.min.js"></script>
+
 
 <script>function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
     var g = document.querySelector(grid),
@@ -82,9 +83,9 @@
       imagesLoaded(document.querySelector('.masonry'), function () {
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
-        // A masonry grid with 8px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
+        // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
         masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
-        console.log("Loaded");
+        console.log("Images loaded");
       });
     }, false);
   });
