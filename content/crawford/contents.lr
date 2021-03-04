@@ -1,11 +1,13 @@
 title: Crawford
 ---
-body: ...
+body:
+
+Within the thickset, whitewashed walls of this seaside cottage, years of travel and living abroad manifest in a beguiling troupe of cherished collectibles, vintage textiles and items of provenance. 
 ---
 pub_date: 2021-02-19
 ---
-summary: House Crawford
+summary: Within the thickset, whitewashed walls of this seaside
 ---
 _template: feature-post-masonry.html
 ---
-cover_image: crawford015.jpg
+cover_image: crawford017.jpg
