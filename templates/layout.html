@@ -427,6 +427,16 @@
   <meta name="msapplication-config" content="/static/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170489089-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-170489089-1');
+  </script>
+
   <!-- Structured data info - Google Search -->
   <script type="application/ld+json">
 [{
@@ -438,8 +448,9 @@
 "sourceOrganization" : "https://vignette.agency"
 }]
 </script>
+
   <title>{% block title %}{% endblock %} | Photography By Vignette | Bespoke Interior, Architecture, Product, Food &
-    Social Media Photography SA</title>
+    Social Media Photography</title>
 </head>
 
 <body>
