@@ -1,5 +1,7 @@
 title: Neethling-Smith
 ---
+_template: feature-post-masonry.html
+---
 body:
 
 In a 1929 heritage block in Cape Town, the past and present converge amicably in the clever reconfiguration and sensitive renovation of an apartment which, once dark and pokey, is now a spacious, light-filled home. 
@@ -8,6 +10,4 @@ pub_date: 2021-03-04
 ---
 summary: In a 1929 heritage block in Cape Town, the past and present converge amicably
 ---
-_template: feature-post-masonry.html
----
-cover_image: neethling006.jpg
+cover_image: neethling-smith006.jpg
