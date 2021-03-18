@@ -3,23 +3,26 @@
 {% block title %}Features{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">Publications</h1>
+{{ this.body }}
 <div class="container">
-    {{ this.body }}
+  
     <div class="columns is-multiline">
 
         {% for publication in this.children.filter(F._model == 'publication-post') %} 
     
         <div class="column is-one-third">
-            <a href="{{ publication.link }}" class="is-size-4 has-text-weight-normal">{{ publication.title }}</a>
+            <!--<a href="{{ publication.link }}" class="is-size-4 has-text-weight-normal">{{ publication.title }}</a>-->
 
             {% set image = publication.attachments.get(publication.cover_image) %}
             {% if image %}
 
             <a href="{{ publication.link }}"><img class="post-img"
-                    src="{{ image.thumbnail(none, 749, mode="fit", quality=85)|url }}"
+                    src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
                     alt="Thumbnail image for {{ publication.title }}"></a>
 
             {% endif %}
+            <p class="mt-0">
+                <a class="more" href="{{ publication.link }}">Read more ...</a></p>
           
         </div>
         {% endfor %}
