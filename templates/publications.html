@@ -11,8 +11,7 @@
         {% for publication in this.children.filter(F._model == 'publication-post') %} 
     
         <div class="column is-one-third">
-            <!--<a href="{{ publication.link }}" class="is-size-4 has-text-weight-normal">{{ publication.title }}</a>-->
-
+        
             {% set image = publication.attachments.get(publication.cover_image) %}
             {% if image %}
 

@@ -1,16 +1,14 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }}{% endblock %}
-
 {% block body %}
 <link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
 <!-- Thank you to https://imagesloaded.desandro.com/-->
 <script src="https://unpkg.com/imagesloaded@^4/imagesloaded.pkgd.min.js"></script>
 
-
 <h1 class="title has-text-primary">{{ this.title }}</h1>
+
 <div class="container">
   {{ this.body }}
-
   {% set documents = this.attachments.documents.all() %}
   {% if documents %}
   {% for document in documents %}
