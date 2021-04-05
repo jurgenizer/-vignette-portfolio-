@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }}{% endblock %}
 {% block body %}
-
 <!-- Event snippet for Website lead conversion page --> 
 <script>
 gtag('event', 'conversion', {'send_to': 'AW-398081433/_zhTCKHbvP8BEJn76L0B'}); 
