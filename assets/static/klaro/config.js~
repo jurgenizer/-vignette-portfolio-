@@ -78,7 +78,7 @@ var klaroConfig = {
     hideLearnMore: false,
 
     // show cookie notice as modal
-    noticeAsModal: true,
+    noticeAsModal: false,
 
     // You can also remove the 'Realized with Klaro!' text in the consent modal.
     // Please don't do this! We provide Klaro as a free open source tool.
