@@ -1,49 +1,50 @@
 {% extends "layout.html" %}
-{% block title %}{{ this.title }} | Editorial features, such as this one, are sold exclusively on a country-to-country basis{% endblock %}
+{% block title %}{{ this.title }} | Editorial features, such as this one, are sold exclusively on a country-to-country
+basis{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">{{ this.title }}</h1>
 
-    <div class="content">
+<div class="content">
     <div class="box">
-    {{ this.body }}
+        {{ this.body }}
 
-    {% set images = this.attachments.images.all() %}
+        {% set images = this.attachments.images.all() %}
 
-    {% if images %}
+        {% if images %}
 
         <div class="container">
             <div class="columns is-multiline">
-            {% for image in images %}
+                {% for image in images %}
                 <div class="column is-half">
-            <img src="{{ image|url }}" alt="Image of {{ this.title }}">
-        <p>{{ image.record_label }}</p>
-  
-              </div>
-            {% endfor %}
+                    <img src="{{ image|url }}" alt="Image of {{ this.title }}">
+                    <p>{{ image.record_label }}</p>
+
+                </div>
+                {% endfor %}
             </div>
         </div>
 
-    {% endif %}
-    
-    </div> 
-    </div> 
+        {% endif %}
+
+    </div>
+</div>
 
 <section class="section">
-<div class="container">
-{% set siblings = this.get_siblings() %}
-{% set older = siblings.next_page %}
-{% set newer = siblings.prev_page %}
+    <div class="container">
+        {% set siblings = this.get_siblings() %}
+        {% set older = siblings.next_page %}
+        {% set newer = siblings.prev_page %}
 
-<nav class="pagination is-small" role="navigation" aria-label="pagination">
+        <nav class="pagination is-small" role="navigation" aria-label="pagination">
 
-        {% if older %}
+            {% if older %}
             <a class="pagination-previous" href="{{ older|url }}">Previous: {{ older.title }}</a>
-        {% endif %}
-        {% if newer %}
+            {% endif %}
+            {% if newer %}
             <a class="pagination-next" href="{{ newer|url }}">Next: {{ newer.title }}</a>
-        {% endif %}
-</nav>
-</div> 
+            {% endif %}
+        </nav>
+    </div>
 </section>
 
 {% endblock %}

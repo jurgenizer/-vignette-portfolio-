@@ -12,16 +12,20 @@
     
         <div class="column is-one-third">
         
-            {% set image = publication.attachments.get(publication.cover_image) %}
-            {% if image %}
+                {% set document = publication.attachments.get(publication.download) %}
+                {% if document %}
 
-            <a href="{{ publication.link }}"><img class="post-img"
-                    src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
-                    alt="Thumbnail image for {{ publication.title }}"></a>
-
-            {% endif %}
-            <p class="mt-0">
-                <a class="more" href="{{ publication.link }}">Read more ...</a></p>
+                {% set image = publication.attachments.get(publication.cover_image) %}
+                {% if image %}
+    
+                <a href="{{ document.path }}"><img class="post-img"
+                        src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
+                        alt="Thumbnail image for {{ publication.title }}"></a>
+                {% endif %}
+           
+                <a href="{{ document.path }}" class="button is-link mb-5 mt-4" target="_blank">View</a>
+         
+                {% endif %}
           
         </div>
         {% endfor %}

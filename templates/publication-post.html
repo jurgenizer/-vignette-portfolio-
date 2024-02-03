@@ -5,6 +5,7 @@
 
 <div class="container">
 
+ 
     {% set images = this.attachments.images.all() %}
 
     {% if images %}
@@ -22,6 +23,15 @@
     </div>
 
     {% endif %}
+
+    {% set documents = this.attachments.documents.all() %}
+    {% if documents %}
+    {% for document in documents %}
+    <a href="{{document._id}}" class="button is-link mb-5" target="_blank">View</a>
+    {% endfor %}
+    {% endif %}
+
+    
 
 </div>
 
