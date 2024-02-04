@@ -19,7 +19,7 @@ basis{% endblock %}
 
   {% set images = this.attachments.images.all() %}
   {% if images %}
-  <div class="wrapper">
+<!--   <div class="wrapper"> -->
     <div class="masonry">
       {% for image in images %}
       <div class="masonry-brick">
@@ -28,7 +28,7 @@ basis{% endblock %}
       </div>
       {% endfor %}
     </div>
-  </div>
+<!--   </div> -->
   {% endif %}
 
 </div>
