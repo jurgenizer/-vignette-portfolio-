@@ -26,14 +26,14 @@
     position: relative;
   }
   
-  @media only screen and (min-width: 1008px) {
+  @media only screen and (min-width: 1024px) {
     /* Vertical masonry bricks on desktop-sized screen */
     .masonry-brick {
       width: 33.33333%;
     }
   }
   
-  @media only screen and (min-width: 769px) and (max-width: 1007px) {
+  @media only screen and (min-width: 769px) and (max-width: 1023px) {
     /* Vertical masonry bricks on tablet-sized screen */
     .masonry-brick {
       width: 50%;
