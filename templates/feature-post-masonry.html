@@ -50,57 +50,71 @@ basis{% endblock %}
   </div>
 </section>
 
-
-
 <script>
+/**
+ * Preload and reform the masonry
+ *
+ * Add some preloader text to the masonry grid and rebuild it on every resize
+ * and load event after making sure all the images in the grid are loaded
+ * completely.
+ */
 
-  function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
-    var g = document.querySelector(grid),
+ function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
+  var g = document.querySelector(grid),
       gc = document.querySelectorAll(gridCell),
       gcLength = gc.length,
       gHeight = 0,
       i;
-
-    for (i = 0; i < gcLength; ++i) {
-      gHeight += gc[i].offsetHeight + parseInt(gridGutter);
-    }
-
-    if (window.screen.width >= 1024)
-      g.style.height = gHeight / dGridCol + gHeight / (gcLength + 1) + "px";
-    else if (window.screen.width < 1024 && window.screen.width >= 768)
-      g.style.height = gHeight / tGridCol + gHeight / (gcLength + 1) + "px";
-    else
-      g.style.height = gHeight / mGridCol + gHeight / (gcLength + 1) + "px";
+  
+  for(i=0; i<gcLength; ++i) {
+    gHeight+=gc[i].offsetHeight+parseInt(gridGutter);
   }
+  
+  if(window.screen.width >= 1024)
+    g.style.height = gHeight/dGridCol + gHeight/(gcLength+1) + "px";
+  else if(window.screen.width < 1024 && window.screen.width >= 768)
+    g.style.height = gHeight/tGridCol + gHeight/(gcLength+1) + "px";
+  else
+    g.style.height = gHeight/mGridCol + gHeight/(gcLength+1) + "px";
+}
 
-  var masonryGrid = document.querySelector('.masonry');
-  masonryGrid.insertAdjacentHTML("afterend", "<div class='jurgen-preloader'></div>")
-  var masonryPreloader = document.querySelector('.jurgen-preloader');
+// Grab the masonry grid
+var masonryElem = document.querySelector('.masonry');
 
-  ["resize", "load"].forEach(function (event) {
-    // Adding a little preloader information
-    masonryGrid.style.display = "none";
+// Insert preloader text dynamically
+masonryElem.insertAdjacentHTML("afterend", "<div class='jurgen-preloader'></div>")
 
-    function doSomething() {
-      console.info("DOM loaded");
-      imagesLoaded(masonryGrid, function () {
-        masonryGrid.style.display = "flex";
-        masonryPreloader.style.display = "none";
-        // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
-        masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
-        console.log("Images loaded");
-      });
-    }
+// Grab the masonry preloader
+var masonryPreloader = document.querySelector('.jurgen-preloader');
 
-    if (document.readyState === "loading") {
-      // Loading hasn't finished yet
-      document.addEventListener("DOMContentLoaded", doSomething);
-    } else {
-      // `DOMContentLoaded` has already fired
-      doSomething();
-    }
+// Fire the magic on every load and resize event
+['resize', 'load'].forEach(function(event) {
+  // Hide the masonry until it loads
+  masonryElem.style.display='none';
 
-  });
+  // Follow the below steps on every load and resize event
+  window.addEventListener(event, function() {
+
+    // Check if all the images finished loading
+    imagesLoaded( document.querySelector('.masonry'), function() {
+
+      // Show the masonry, as it is loaded now
+      masonryElem.style.display='flex';
+
+      // Hide the preloader, as it is not needed anymore
+      masonryPreloader.style.display='none';
+
+      /*
+       * A maonsry grid with 8px gutter, with 3 columns on desktop,
+       * 2 on tablet, and 1 column on mobile devices.
+       */
+      masonry('.masonry', '.masonry-brick', 8, 3, 2, 1);
+
+      // Done!
+      console.log('Flexbox Masonry Loaded');
+    });
+  }, false);
+});
 </script>
 
 {% endblock %}
