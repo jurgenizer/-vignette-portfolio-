@@ -89,35 +89,8 @@ var masonryPreloader = document.querySelector('.jurgen-preloader');
 
 // Fire the magic on every load and resize event
 
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-  masonryElem.style.display='none';
 
-// Follow the below steps on every load and resize event
-window.addEventListener(event, function() {
-
-  // Check if all the images finished loading
-  imagesLoaded( document.querySelector('.masonry'), function() {
-
-    // Show the masonry, as it is loaded now
-    masonryElem.style.display='flex';
-
-    // Hide the preloader, as it is not needed anymore
-    masonryPreloader.style.display='none';
-
-    /*
-     * A maonsry grid with 8px gutter, with 3 columns on desktop,
-     * 2 on tablet, and 1 column on mobile devices.
-     */
-    masonry('.masonry', '.masonry-brick', 8, 3, 2, 1);
-
-    // Done!
-    console.log('Flexbox Masonry Loaded');
-  });
-}, false);
-});
-
-/* ['resize', 'load'].forEach(function(event) {
+ ['resize', 'load'].forEach(function(event) {
   // Hide the masonry until it loads
   masonryElem.style.display='none';
 
@@ -140,7 +113,7 @@ window.addEventListener(event, function() {
       console.log('Flexbox Masonry Loaded');
     });
   }, false);
-}); */
+}); 
 
 </script>
 
