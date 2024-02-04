@@ -70,9 +70,9 @@ basis{% endblock %}
     gHeight+=gc[i].offsetHeight+parseInt(gridGutter);
   }
   
-  if(window.screen.width >= 1024)
+  if(window.screen.width >= 992)
     g.style.height = gHeight/dGridCol + gHeight/(gcLength+1) + "px";
-  else if(window.screen.width < 1024 && window.screen.width >= 768)
+  else if(window.screen.width < 992 && window.screen.width >= 768)
     g.style.height = gHeight/tGridCol + gHeight/(gcLength+1) + "px";
   else
     g.style.height = gHeight/mGridCol + gHeight/(gcLength+1) + "px";
@@ -107,7 +107,7 @@ var masonryPreloader = document.querySelector('.jurgen-preloader');
       masonryPreloader.style.display='none';
 
   
-      masonry('.masonry', '.masonry-brick', 20, 2, 2, 1);
+      masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
 
       // Done!
       console.log('Flexbox Masonry Loaded');
