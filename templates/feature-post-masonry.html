@@ -87,7 +87,7 @@ basis{% endblock %}
   // Grab the masonry grid
   var masonryElem = document.querySelector('.masonry');
 
-  // Insert preloader text dynamically
+  // Insert preloader element dynamically
   masonryElem.insertAdjacentHTML("afterend", "<div class='jurgen-preloader'></div>")
 
   // Grab the masonry preloader
@@ -109,13 +109,11 @@ basis{% endblock %}
         // Hide the preloader, as it is not needed anymore
         masonryPreloader.style.display = 'none';
 
+        // Show the masonry, as it is loaded now
+        masonryElem.style.display = 'flex';
 
 
         masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
-
-
-        // Show the masonry, as it is loaded now
-        masonryElem.style.display = 'flex';
 
         // Done!
         console.log('Flexbox Masonry Loaded');
