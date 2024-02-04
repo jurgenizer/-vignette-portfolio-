@@ -54,7 +54,7 @@ basis{% endblock %}
 
 <script>
 
-function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
+  function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
     var g = document.querySelector(grid),
       gc = document.querySelectorAll(gridCell),
       gcLength = gc.length,
@@ -80,7 +80,9 @@ function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
   ["resize", "load"].forEach(function (event) {
     // Adding a little preloader information
     masonryGrid.style.display = "none";
-    window.addEventListener(event, function () {
+
+    function doSomething() {
+      console.info("DOM loaded");
       imagesLoaded(masonryGrid, function () {
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
@@ -88,9 +90,15 @@ function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
         masonry(".masonry", ".masonry-brick", 10, 3, 2, 1);
         console.log("Images loaded");
       });
-    }, false);
+    }
 
-
+    if (document.readyState === "loading") {
+      // Loading hasn't finished yet
+      document.addEventListener("DOMContentLoaded", doSomething);
+    } else {
+      // `DOMContentLoaded` has already fired
+      doSomething();
+    }
 
   });
 </script>
