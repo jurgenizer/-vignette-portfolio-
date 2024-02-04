@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
-{% block title %}{{ this.title }} | Editorial features, such as this one, are sold exclusively on a country-to-country basis{% endblock %}
+{% block title %}{{ this.title }} | Editorial features, such as this one, are sold exclusively on a country-to-country
+basis{% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
 <!-- Thank you to https://imagesloaded.desandro.com/-->
-<<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
 <h1 class="title has-text-primary">{{ this.title }}</h1>
 
@@ -78,7 +79,8 @@
     // Adding a little preloader information
     masonryGrid.style.display = "none";
     window.addEventListener(event, function () {
-      imagesLoaded(document.querySelector('.masonry'), function () {
+      imagesLoaded(masonryGrid, function () {
+
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
         // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
@@ -86,6 +88,15 @@
         console.log("Images loaded");
       });
     }, false);
+
+
+    var imgLoad = imagesLoaded(masonryGrid);
+    function onAlways(instance) {
+      console.log('all images are loaded yo');
+    }
+    // bind with .on()
+    imgLoad.on('always', onAlways);
+
   });
 </script>
 
