@@ -19,8 +19,8 @@
                 {% if image %}
     
                 <a href="{{ document.path }}"><img class="post-img"
-                        src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
-                        alt="Thumbnail image for {{ publication.title }}"></a>
+                    src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
+                        alt="Cover for {{ publication.title }}"></a>
                 {% endif %}
            
                 <a href="{{ document.path }}" class="button is-link mb-5 mt-4" target="_blank">View</a>
