@@ -3,7 +3,7 @@
 basis{% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ '/static/masonry.css'|url }}">
-<!-- Thank you to https://imagesloaded.desandro.com/-->
+<!-- Thank you https://imagesloaded.desandro.com/-->
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
 <h1 class="title has-text-primary">{{ this.title }}</h1>
@@ -52,7 +52,9 @@ basis{% endblock %}
 
 
 
-<script>function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
+<script>
+
+function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
     var g = document.querySelector(grid),
       gc = document.querySelectorAll(gridCell),
       gcLength = gc.length,
@@ -80,7 +82,6 @@ basis{% endblock %}
     masonryGrid.style.display = "none";
     window.addEventListener(event, function () {
       imagesLoaded(masonryGrid, function () {
-
         masonryGrid.style.display = "flex";
         masonryPreloader.style.display = "none";
         // A masonry grid with 10px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
@@ -90,12 +91,6 @@ basis{% endblock %}
     }, false);
 
 
-    var imgLoad = imagesLoaded(masonryGrid);
-    function onAlways(instance) {
-      console.log('all images are loaded yo');
-    }
-    // bind with .on()
-    imgLoad.on('always', onAlways);
 
   });
 </script>
