@@ -16,7 +16,6 @@
     margin-left: -15px; /* Adjustment for the gutter */
     counter-reset: brick;
     width: 100%;
-    height: auto;
   }
   
   .masonry-brick {
@@ -25,14 +24,12 @@
     margin: 0 0 15px 15px;  /* Some Gutter */
     background-color: #eee;
     position: relative;
-    height: auto;
   }
   
   @media only screen and (min-width: 1024px) {
     /* Vertical masonry bricks on desktop-sized screen */
     .masonry-brick {
       width: 33.33333%;
-      height: auto;
     }
   }
   
@@ -40,7 +37,6 @@
     /* Vertical masonry bricks on tablet-sized screen */
     .masonry-brick {
       width: 50%;
-      height: auto;
     }
   }
 
@@ -48,7 +44,6 @@
     /* Vertical masonry bricks on phone-sized screen */
     .masonry-brick {
         width: 100%;
-        height: auto;
       }
 }
   
