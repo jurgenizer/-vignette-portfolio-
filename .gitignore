@@ -1,2 +1,10 @@
 /build
-/build
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+
+# Mac
+.DS_Store
+
+
