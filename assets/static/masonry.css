@@ -13,9 +13,9 @@
   .masonry {
     display: flex;
     flex-flow: column wrap;
-    margin-left: -15px; /* Adjustment for the gutter */
+    margin-left: -20px; /* Adjustment for the gutter */
     counter-reset: brick;
-    width: 90%;
+    width: 100%;
   }
   
   .masonry-brick {

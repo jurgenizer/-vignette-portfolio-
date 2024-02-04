@@ -109,11 +109,13 @@ basis{% endblock %}
         // Hide the preloader, as it is not needed anymore
         masonryPreloader.style.display = 'none';
 
-        // Show the masonry, as it is loaded now
-        masonryElem.style.display = 'flex';
 
 
         masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
+
+
+        // Show the masonry, as it is loaded now
+        masonryElem.style.display = 'flex';
 
         // Done!
         console.log('Flexbox Masonry Loaded');
