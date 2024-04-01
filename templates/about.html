@@ -6,12 +6,22 @@
 {{ this.body }}
 </div>
   <div class="container">
-    <div class="columns is-multiline is-mobile">
-      <div class="column is-full">
-        <picture>
-          {{ this.hero }}
-        </picture>
-      </div>
+    <div class="columns is-multiline is-mobile is-centered"">
+
+      {% set videos = this.attachments.videos.all() %}
+      {% if videos %}
+     
+              {% for video in videos %}
+  
+                  <video width="1920" controls>
+                    <source src=  {{ video|url }} type="video/mp4">
+                    Sorry, your browser does not support HTML5 video.
+                  </video>
+
+              {% endfor %}
+
+      {% endif %}
+ 
     </div>
   </div>
 {% endblock %}
