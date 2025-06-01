@@ -2,7 +2,7 @@ _model: contact
 ---
 title: Contact
 ---
-body: Should you wish to make any enquiries regarding our features, we welcome you to email us using the form below. Low res images and copy are available upon request.
+body: If you have any enquiries about our features or would like to schedule a photoshoot, please email us using the form below or contact:
 ---
 contactForm:
 
@@ -33,6 +33,7 @@ contactForm:
     </div>  
 </form>
 ---
-phone:
-
- Natalie Boruvka +27 72 606 9392
+phone: Natalie Boruvka +27 72 606 9392
+---
+email: natalie@vignette.agency
+---
