@@ -3,39 +3,27 @@
 {% block title %}{{ this.title }} | Airbnb and other short-term rental properties we have photographed{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">{{ this.title }}</h1>
+{{ this.body }}
 <div class="container">
-  {{ this.body }}
-  
-  <div class="columns is-multiline">
-    {% for airbnb in this.children.filter(F._model == 'airbnb-post') %}
-    <div class="column is-one-third">
-      <div class="card">
-        <div class="card-image">
-          {% set image = airbnb.attachments.get(airbnb.cover_image) %}
-          {% if image %}
-          <figure class="image">
-            <a href="{{ airbnb|url }}">
-              <img class="post-img"
-                src="{{ image.thumbnail(498, 749, mode='crop', quality=85)|url }}"
-                alt="Thumbnail image for {{ airbnb.title }}">
-            </a>
-          </figure>
-          {% endif %}
+    <div class="columns is-multiline">
+
+        {% for airbnb in this.children.filter(F._model == 'airbnb-post') %}
+        <div class="column is-one-third">
+            <a href="{{ airbnb|url }}" class="is-size-4 has-text-weight-normal">{{ airbnb.title }}</a>
+
+            {% set image = airbnb.attachments.get(airbnb.cover_image) %}
+            {% if image %}
+
+            <a href="{{ airbnb|url }}"><img class="post-img"
+                    src="{{ image.thumbnail(498, 749, mode="crop", quality=85)|url }}"
+                    alt="Thumbnail image for {{ airbnb.title }}"></a>
+
+            {% endif %}
+            <p class="mt-2">{{ airbnb.summary }}
+                <a class="more" href="{{ airbnb|url }}">Read more ...</a></p>
         </div>
-        <div class="card-content">
-          <h3 class="title is-5">
-            <a href="{{ airbnb|url }}" class="has-text-dark">{{ airbnb.title }}</a>
-          </h3>
-          {% if airbnb.summary %}
-          <div class="content">
-            <p>{{ airbnb.summary }}</p>
-            <a class="button is-link is-small" href="{{ airbnb|url }}">View Property</a>
-          </div>
-          {% endif %}
-        </div>
-      </div>
+        {% endfor %}
+
     </div>
-    {% endfor %}
-  </div>
 </div>
 {% endblock %}

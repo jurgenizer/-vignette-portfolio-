@@ -2,36 +2,34 @@
 {% from "macros/pagination.html" import render_pagination %}
 {% block title %}{{ this.title }} | Publications that have made use of our editorial content and photographs{% endblock %}
 {% block body %}
-<h1 class="title has-text-primary">{{ this.title }}</h1>
+<h1 class="title has-text-primary">Publications</h1>
+{{ this.body }}
 <div class="container">
-  {{ this.body }}
   
-  <div class="columns is-multiline">
-    {% for publication in this.children.filter(F._model == 'publication-post') %} 
-      <div class="column is-one-third">
-        {% set image = publication.attachments.get(publication.cover_image) %}
-        {% if image %}
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <a href="{{ publication|url }}">
-                  <img class="post-img"
-                    src="{{ image.thumbnail(500, 645, mode='crop', quality=85)|url }}"
-                    alt="Cover for {{ publication.title }}">
-                </a>
-              </figure>
-            </div>
-            <div class="card-content">
-              <h3 class="title is-5">{{ publication.title }}</h3>
-              {% if publication.summary %}
-                <p class="content">{{ publication.summary }}</p>
-              {% endif %}
-              <a href="{{ publication|url }}" class="button is-link">View Publication</a>
-            </div>
-          </div>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
+    <div class="columns is-multiline">
+
+        {% for publication in this.children.filter(F._model == 'publication-post') %} 
+    
+        <div class="column is-one-third">
+        
+                {% set document = publication.attachments.get(publication.download) %}
+                {% if document %}
+
+                {% set image = publication.attachments.get(publication.cover_image) %}
+                {% if image %}
+    
+                <a href="{{ document.path }}"><img class="post-img"
+                    src="{{ image.thumbnail(500, 645, mode="crop", quality=85)|url }}"
+                        alt="Cover for {{ publication.title }}"></a>
+                {% endif %}
+           
+                <a href="{{ document.path }}" class="button is-link mb-5 mt-4" target="_blank">View</a>
+         
+                {% endif %}
+          
+        </div>
+        {% endfor %}
+
+    </div>
 </div>
 {% endblock %}
