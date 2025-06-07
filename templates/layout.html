@@ -1,5 +1,5 @@
 <!doctype html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,63 +7,35 @@
   <meta name="description" content="Vignette is a photography and editorial content agency in Cape Town, South Africa">
   <meta name="keywords" content="photography, social media, editorial content, writing, styling, airbnb photos">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-  <link rel="manifest" href="/static/site.webmanifest">
-  <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#000000">
-  <link rel="shortcut icon" href="/static/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png'|url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png'|url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png'|url }}">
+  <link rel="manifest" href="{{ '/static/site.webmanifest'|url }}">
+  <link rel="mask-icon" href="{{ '/static/safari-pinned-tab.svg'|url }}" color="#000000">
+  <link rel="shortcut icon" href="{{ '/static/favicon.ico'|url }}">
   <meta name="msapplication-TileColor" content="#2d89ef">
-  <meta name="msapplication-config" content="/static/browserconfig.xml">
+  <meta name="msapplication-config" content="{{ '/static/browserconfig.xml'|url }}">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Open Graph Data - Facebook -->
-  <meta property="og:url" content="https://vignette.agency/" />
-  <meta property="og:title"
-    content="Photography By Vignette | Architecture, Interior, Social Media Photography and Styling" />
-  <meta property="og:description"
-    content="Vignette is both a photography and an editorial content agency in Cape Town, South Africa" />
+  <meta property="og:url" content="https://vignette.agency{{ this|url }}" />
+  <meta property="og:title" content="{% block title %}{% endblock %} | Vignette Content Agency" />
+  <meta property="og:description" content="Vignette is both a photography and an editorial content agency in Cape Town, South Africa" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://vignette.agency/static/images/vignette-content-agency-logo.png" />
+  <meta property="og:image" content="https://vignette.agency{{ '/static/images/vignette-content-agency-logo.png'|url }}" />
   <meta property="og:site_name" content="Vignette Agency" />
 
   <!-- Twitter Card -->
-  <meta name=”twitter:card” content="summary" />
-  <meta name=”twitter:url” content="https://vignette.agency/" />
-  <meta name=”twitter:title”
-    content="Photography By Vignette | Interior, Architecture, Product, Food & Social Media Photography" />
-  <meta name=”twitter:description”
-    content="Vignette is both a photography and an editorial content agency in Cape Town, South Africa" />
-  <meta name=”twitter:image” content="https://vignette.agency/static/images/vignette-content-agency-logo.png" />
-
-  <!-- GlowCookies -->
-  <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.8/src/glowCookies.min.js"></script>
-
-  <script>
-    glowCookies.start('en', {
-      style: 1,
-      analytics: 'G-5Z6MPZ0125',
-      hideAfterClick: true,
-      bannerDescription: 'We use our own and third-party cookies to personalize content and to analyze web traffic.',
-      bannerLinkText: 'How we use cookies',
-      policyLink: 'https://vignette.agency/privacy-policy/'
-    });
-  </script>
-  <!-- End GlowCookies -->
-
-  <!-- Structured data info - Google Search -->
-  <script type="application/ld+json">
-[{
-"@context": "http://schema.org",
-"@type": "Organization",
-"name" : "Vignette Content Agency Logo",
-"url": "https://vignette.agency",
-"logo": "https://vignette.agency/static/images/vignette-content-agency-logo.png",
-"sourceOrganization" : "https://vignette.agency"
-}]
-</script>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://vignette.agency{{ this|url }}" />
+  <meta name="twitter:title" content="{% block title %}{% endblock %} | Vignette Content Agency" />
+  <meta name="twitter:description" content="Vignette is both a photography and an editorial content agency in Cape Town, South Africa" />
+  <meta name="twitter:image" content="https://vignette.agency{{ '/static/images/vignette-content-agency-logo.png'|url }}" />
 
   <title>{% block title %}{% endblock %} | Vignette Content Agency</title>
+  
+  <!-- Load CSS early for better performance -->
+  <link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">
 </head>
 
 <body>
@@ -71,13 +43,13 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5PVML5" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  
   <nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
     <div class="container">
-
       <div class="navbar-brand pt-2">
-        <p class="pl-4 is-mobile">
+        <p class="pl-4">
           <a href="{{ '/'|url }}">
-            <img src="{{ '/static/vignette-logo-white-horizontal.svg'|url }}" width="242" height="42">
+            <img src="{{ '/static/vignette-logo-white-horizontal.svg'|url }}" width="242" height="42" alt="Vignette Content Agency Logo">
           </a>
         </p>
 
@@ -90,8 +62,7 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
-          </a>
-          <a href="{{ '/'|url }}" class="navbar-item">
+          <a href="{{ '/features'|url }}" class="navbar-item">
             Features
           </a>
           <a href="{{ '/publications'|url }}" class="navbar-item">
@@ -106,8 +77,8 @@
           <a href="{{ '/about'|url }}" class="navbar-item">
             About
           </a>
-          <a href="https://www.instagram.com/vignette.sa/" class="navbar-item">
-            Instagram&nbsp;<img src="{{ '/static/instagram-white.svg'|url }}" width="14" height="14">
+          <a href="https://www.instagram.com/vignette.sa/" class="navbar-item" target="_blank" rel="noopener noreferrer">
+            Instagram&nbsp;<img src="{{ '/static/instagram-white.svg'|url }}" width="14" height="14" alt="Instagram">
           </a>
           <a href="{{ '/contact'|url }}" class="navbar-item">
             Contact
@@ -120,12 +91,11 @@
               <a href="{{ '/privacy-policy'|url }}" class="navbar-item">
                 Privacy Policy
               </a>
-              <div>
-              </div>
             </div>
           </div>
-
         </div>
+      </div>
+    </div>
   </nav>
 
   <section class="section pt-5">
@@ -138,26 +108,47 @@
 
   <footer class="footer has-text-white content has-text-centered">
     <!-- Thank you https://simpleicons.org/ -->
-    <a href="https://www.instagram.com/vignette.sa/" title="Vignette on Instagram">
-      <img src="{{ '/static/instagram-pink.svg'|url }}" width="48" height="48">
+    <a href="https://www.instagram.com/vignette.sa/" title="Vignette on Instagram" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/static/instagram-pink.svg'|url }}" width="48" height="48" alt="Vignette on Instagram">
     </a>
     <p class="pt-1">&copy; 2020 - 2025 Vignette</p>
   </footer>
 
-  <link rel="stylesheet" href="{{ '/static/vignette-bulma.css'|url }}">
+  <!-- GlowCookies -->
+  <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.8/src/glowCookies.min.js"></script>
+  <script>
+    glowCookies.start('en', {
+      style: 1,
+      analytics: 'G-5Z6MPZ0125',
+      hideAfterClick: true,
+      bannerDescription: 'We use our own and third-party cookies to personalize content and to analyze web traffic.',
+      bannerLinkText: 'How we use cookies',
+      policyLink: 'https://vignette.agency/privacy-policy/'
+    });
+  </script>
+
+  <!-- Structured data info - Google Search -->
+  <script type="application/ld+json">
+  [{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Vignette Content Agency",
+    "url": "https://vignette.agency",
+    "logo": "https://vignette.agency{{ '/static/images/vignette-content-agency-logo.png'|url }}",
+    "sourceOrganization": "https://vignette.agency"
+  }]
+  </script>
+
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
-
       // Get all "navbar-burger" elements
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
       // Check if there are any navbar burgers
       if ($navbarBurgers.length > 0) {
-
         // Add a click event on each of them
         $navbarBurgers.forEach(el => {
           el.addEventListener('click', () => {
-
             // Get the target from the "data-target" attribute
             const target = el.dataset.target;
             const $target = document.getElementById(target);
@@ -165,12 +156,11 @@
             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
             el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
-
           });
         });
       }
-
     });
   </script>
 
 </body>
+</html>

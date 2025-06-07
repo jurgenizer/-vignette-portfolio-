@@ -3,27 +3,39 @@
 {% block title %}{{ this.title }} | Editorial content and images for sale{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">{{ this.title }}</h1>
-{{ this.body }}
 <div class="container">
-    <div class="columns is-multiline">
-
-        {% for feature in this.children.filter(F._model == 'feature-post') %}
-        <div class="column is-one-third">
-            <a href="{{ feature|url }}" class="is-size-4 has-text-weight-normal">{{ feature.title }}</a>
-
-            {% set image = feature.attachments.get(feature.cover_image) %}
-            {% if image %}
-
-            <a href="{{ feature|url }}"><img class="post-img"
-                    src="{{ image.thumbnail(498, 749, mode="crop", quality=85)|url }}"
-                    alt="Thumbnail image for {{ feature.title }}"></a>
-
-            {% endif %}
-            <p class="mt-2">{{ feature.summary }}
-                <a class="more" href="{{ feature|url }}">Read more ...</a></p>
+  {{ this.body }}
+  
+  <div class="columns is-multiline">
+    {% for feature in this.children.filter(F._model == 'feature-post') %}
+    <div class="column is-one-third">
+      <div class="card">
+        <div class="card-image">
+          {% set image = feature.attachments.get(feature.cover_image) %}
+          {% if image %}
+          <figure class="image">
+            <a href="{{ feature|url }}">
+              <img class="post-img"
+                src="{{ image.thumbnail(498, 749, mode='crop', quality=85)|url }}"
+                alt="Thumbnail image for {{ feature.title }}">
+            </a>
+          </figure>
+          {% endif %}
         </div>
-        {% endfor %}
-
+        <div class="card-content">
+          <h3 class="title is-5">
+            <a href="{{ feature|url }}" class="has-text-dark">{{ feature.title }}</a>
+          </h3>
+          {% if feature.summary %}
+          <div class="content">
+            <p>{{ feature.summary }}</p>
+            <a class="button is-link is-small" href="{{ feature|url }}">Read more</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

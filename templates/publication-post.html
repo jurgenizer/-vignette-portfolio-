@@ -1,56 +1,50 @@
 {% extends "layout.html" %}
-{% block title %}{{ this.title }}| We are honoured to have our work featured in this publication{% endblock %}
+{% block title %}{{ this.title }} | We are honoured to have our work featured in this publication{% endblock %}
 {% block body %}
 <h1 class="title has-text-primary">{{ this.title }}</h1>
 
 <div class="container">
-
+  {{ this.body }}
  
-    {% set images = this.attachments.images.all() %}
-
-    {% if images %}
-
-    <div class="container">
-        <div class="columns is-multiline">
-            {% for image in images %}
-            <div class="column is-half">
-                <div class="item">
-                    <img src="{{ image|url }}" alt="Our photography featured in {{ this.title }}">
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+  {% set images = this.attachments.images.all() %}
+  {% if images %}
+  <div class="columns is-multiline">
+    {% for image in images %}
+    <div class="column is-half">
+      <div class="item">
+        <img src="{{ image|url }}" alt="Our photography featured in {{ this.title }}">
+      </div>
     </div>
-
-    {% endif %}
-
-    {% set documents = this.attachments.documents.all() %}
-    {% if documents %}
-    {% for document in documents %}
-    <a href="{{document._id}}" class="button is-link mb-5" target="_blank">View</a>
     {% endfor %}
-    {% endif %}
+  </div>
+  {% endif %}
 
-    
+  {% set documents = this.attachments.documents.all() %}
+  {% if documents %}
+  <div class="buttons mb-4">
+    {% for document in documents %}
+    <a href="{{ document|url }}" class="button is-link" target="_blank" rel="noopener noreferrer">View {{ document._id }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
 
 </div>
 
 <section class="section">
-    <div class="container">
-        {% set siblings = this.get_siblings() %}
-        {% set older = siblings.next_page %}
-        {% set newer = siblings.prev_page %}
+  <div class="container">
+    {% set siblings = this.get_siblings() %}
+    {% set older = siblings.next_page %}
+    {% set newer = siblings.prev_page %}
 
-        <nav class="pagination is-small" role="navigation" aria-label="pagination">
-
-            {% if older %}
-            <a class="pagination-previous" href="{{ older|url }}">Previous: {{ older.title }}</a>
-            {% endif %}
-            {% if newer %}
-            <a class="pagination-next" href="{{ newer|url }}">Next: {{ newer.title }}</a>
-            {% endif %}
-        </nav>
-    </div>
+    <nav class="pagination is-small" role="navigation" aria-label="pagination">
+      {% if older %}
+      <a class="pagination-previous" href="{{ older|url }}">Previous: {{ older.title }}</a>
+      {% endif %}
+      {% if newer %}
+      <a class="pagination-next" href="{{ newer|url }}">Next: {{ newer.title }}</a>
+      {% endif %}
+    </nav>
+  </div>
 </section>
 
 {% endblock %}
