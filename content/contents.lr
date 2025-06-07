@@ -2,7 +2,7 @@ _model: features
 ---
 title: Features
 ---
-_template: feature.html
+_template: features.html
 ---
 body:
 

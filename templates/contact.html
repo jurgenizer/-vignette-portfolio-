@@ -1,28 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }} | We're friendly!{% endblock %}
 {% block body %}
+
 <h1 class="title has-text-primary">{{ this.title }}</h1>
 <div class="container">
   {{ this.body }}
 
- <a href="tel:+27726069392" class="has-text-link">{{ this.phone }}</a>
+  <a href="tel:+27726069392" class="has-text-link">{{ this.phone }}</a>
 
   <div class="content">
-    <a href="javascript:void(0)" class="has-text-link" onclick="openEmail()">
-      natalie [at] vignette.agency
-    </a>
+    <a href="mailto:natalie@vignette.agency" class="has-text-link">natalie@vignette.agency</a>
   </div>
 
   <div class="content">
     {{ this.contactForm }}
   </div>
 </div>
-
-<script>
-function openEmail() {
-    var email = 'natalie' + '@' + 'vignette.agency';
-    window.location.href = 'mailto:' + email;
-}
-</script>
 
 {% endblock %}

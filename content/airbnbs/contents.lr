@@ -1,0 +1,10 @@
+_model: airbnbs
+---
+title: Airbnbs
+---
+_template: airbnb.html
+---
+body:
+
+Selected short-term rental properties we have photographed.
+

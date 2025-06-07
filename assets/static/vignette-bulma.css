@@ -1,12 +1,4 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
-
-/* Added by Jurgen */
-.post-img {
-  display: block;
-  border-radius: 5px 5px 5px 5px;
-}
-
 /* Bulma Utilities */
 @keyframes spinAround {
   from {
@@ -1707,9 +1699,7 @@ body.has-spaced-navbar-fixed-bottom {
     order: 3;
   }
 }
-/* height: 100%; added by Jurgen */
 .box {
-  height: 100%;
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);

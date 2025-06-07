@@ -2,4 +2,6 @@ _model: publications
 ---
 title: Publications
 ---
+_template: publications.html
+---
 body: Publications that we are honoured to have been featured in.
