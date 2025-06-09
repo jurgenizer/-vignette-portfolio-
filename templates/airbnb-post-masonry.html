@@ -12,11 +12,11 @@
   
   <div class="buttons mb-4">
     {% if this['link-1'] %}
-    <a href="{{ this['link-1'] }}" class="button is-link" target="_blank" rel="noopener noreferrer">Listing One</a>
+    <a href="{{ this['link-1'] }}" class="button is-link" target="_blank" rel="noopener noreferrer">{{ this['link-1.button-text'] }}</a>
     {% endif %}
     
     {% if this['link-2'] %}
-    <a href="{{ this['link-2'] }}" class="button is-link" target="_blank" rel="noopener noreferrer">Listing Two</a>
+    <a href="{{ this['link-2'] }}" class="button is-link" target="_blank" rel="noopener noreferrer">{{ this['link-2.button-text'] }}</a>
     {% endif %}
   </div>
 
