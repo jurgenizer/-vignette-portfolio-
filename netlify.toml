@@ -24,3 +24,5 @@
   [plugins.inputs]
   cloudName = "jurgen-geitner"
   deliveryType = "upload"
+  dpr = "2"
+  loadingStrategy = "eager"
