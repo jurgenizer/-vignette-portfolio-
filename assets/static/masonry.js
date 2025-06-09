@@ -91,38 +91,38 @@ function initMasonryWhenReady() {
   });
 
   // Initialize masonry after images load
-  imagesLoaded(masonryElem, function() {
-    // Use a longer timeout for Firefox
+  imagesLoaded(masonryElem.querySelectorAll('img'), function() {
+  // Add a short delay to ensure all image dimensions are available (especially for CDN images)
+  setTimeout(function() {
+    // Hide preloader
+    if (masonryPreloader) {
+      masonryPreloader.style.display = 'none';
+    }
+
+    // Show masonry using visibility, not display
+    masonryElem.style.visibility = 'visible';
+
+    // Calculate layout
+    masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
+
+    // Force a reflow before adding the loaded class
+    masonryElem.offsetHeight;
+
+    // Add loaded class to trigger animations
+    masonryElem.classList.add('loaded');
+
+    // Ensure each brick gets opacity:1 directly for browsers with CSS issues
     setTimeout(function() {
-      // Hide preloader
-      if (masonryPreloader) {
-        masonryPreloader.style.display = 'none';
-      }
-      
-      // Show masonry using visibility, not display
-      masonryElem.style.visibility = 'visible';
-      
-      // Calculate layout
-      masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
-      
-      // Force a reflow before adding the loaded class
-      masonryElem.offsetHeight;
-      
-      // Add loaded class to trigger animations
-      masonryElem.classList.add('loaded');
-      
-      // Ensure each brick gets opacity:1 directly for browsers with CSS issues
-      setTimeout(function() {
-        bricks.forEach(function(brick) {
-          if (getComputedStyle(brick).opacity === '0') {
-            brick.style.opacity = '1';
-          }
-        });
-      }, 350);
-      
-      console.log('Masonry loaded with animation!');
-    }, 200);
-  });
+      bricks.forEach(function(brick) {
+        if (getComputedStyle(brick).opacity === '0') {
+          brick.style.opacity = '1';
+        }
+      });
+    }, 350);
+
+    console.log('Masonry loaded with animation!');
+  }, 300); // <-- You can adjust this delay (200-400ms is typical)
+});
   
   // Re-initialize on resize
   window.addEventListener('resize', function() {
