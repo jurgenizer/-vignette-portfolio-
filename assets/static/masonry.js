@@ -81,8 +81,8 @@ function initMasonryWhenReady() {
   masonryElem.insertAdjacentHTML("afterend", "<div class='jurgen-preloader'></div>");
   var masonryPreloader = document.querySelector('.jurgen-preloader');
   
-  // Hide masonry initially
-  masonryElem.style.display = 'none';
+  // Hide masonry initially using visibility, not display
+  masonryElem.style.visibility = 'hidden';
   
   // Apply fade-in animation to each brick explicitly
   var bricks = masonryElem.querySelectorAll('.masonry-brick');
@@ -99,8 +99,8 @@ function initMasonryWhenReady() {
         masonryPreloader.style.display = 'none';
       }
       
-      // Show masonry
-      masonryElem.style.display = 'flex';
+      // Show masonry using visibility, not display
+      masonryElem.style.visibility = 'visible';
       
       // Calculate layout
       masonry('.masonry', '.masonry-brick', 10, 3, 2, 1);
@@ -118,7 +118,7 @@ function initMasonryWhenReady() {
             brick.style.opacity = '1';
           }
         });
-      }, 100);
+      }, 350);
       
       console.log('Masonry loaded with animation!');
     }, 200);
